@@ -18,7 +18,7 @@ This repo shows how you can run your android tests with both **mocking** and **f
 
 > Mock and forward HTTP Request with Mock-Server on Android device
 
-![](demo-video-android-mock-server.mov)
+![](demo-video-android-mock-server.gif)
 
 ### Prerequisites:
 
