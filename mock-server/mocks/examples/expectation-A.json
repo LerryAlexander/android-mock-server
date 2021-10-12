@@ -1,0 +1,50 @@
+[
+    {
+        "httpRequest": {
+          "method": "GET",
+          "path": "/",
+          "headers": {
+            "Host": ["appiumpro.com"]
+            }
+        },
+        "httpResponse": {
+          "statusCode": 200,
+          "reasonPhrase": "OK",
+          "headers": {
+            "Content-Type": [
+              "text/html"
+            ]
+          },
+          "body": "<!DOCTYPE html><html><body><h1>MOCK SERVICE EXAMPLE WITH MOCK-SERVER</h1><p>This example response is in HTML format, but it can also be implemented with JSON formats</p></body></html>",
+          "delay": {
+            "timeUnit": "SECONDS",
+            "value": 2
+          }
+        }
+    },
+    {
+      "httpRequest": {
+          "method": "POST",
+          "path": "/example/path",
+          "headers": {
+              "Host": [
+                  "example.host.com"
+              ]
+          }
+      },
+      "httpResponse": {
+          "statusCode": 200,
+          "body": {
+              "status": {
+                  "code": "200",
+                  "techMessage": "SUCCESS",
+                  "userMessage": "Example response in JSON Format"
+              }
+          },
+          "delay": {
+            "timeUnit": "SECONDS",
+            "value": 3
+        }
+      }
+  }
+]

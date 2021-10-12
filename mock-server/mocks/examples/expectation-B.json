@@ -1,0 +1,25 @@
+{
+    "httpRequest": {
+        "method": "PUT",
+        "path": "/example/path/with/put/method",
+        "headers": {
+            "Host": [
+                "example.host.com"
+            ]
+        }
+    },
+    "httpResponse": {
+        "statusCode": 200,
+        "body": {
+            "status": {
+                "code": "200",
+                "techMessage": "SUCCESS",
+                "userMessage": "Example response in JSON Format"
+            }
+        },
+        "delay": {
+          "timeUnit": "SECONDS",
+          "value": 3
+      }
+    }
+}

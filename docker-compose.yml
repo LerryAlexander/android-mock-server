@@ -1,0 +1,25 @@
+version: "3.1"
+services:
+  mock-server:
+    image: mockserver/mockserver
+    ports:
+      - "1080:1080"
+    environment:
+      - MOCKSERVER_INITIALIZATION_JSON_PATH=/config/initializer.json
+    volumes:
+      - ./mock-server/:/config
+  android-container:
+    image: budtmo/docker-android-x86-7.0
+    container_name: android_container
+    privileged: true
+    ports:
+      - "6080:6080"
+      - "5554:5554"
+      - "5555:5555"
+    environment:
+      - DEVICE=Nexus 4
+      - APPIUM=false
+      - ENABLE_PROXY_ON_EMULATOR=true
+      - HTTP_PROXY=http://172.17.0.1:1080
+    volumes:
+      - ./android:/config
