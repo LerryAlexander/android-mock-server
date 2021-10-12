@@ -1,4 +1,6 @@
-# android-mock-server
+# Android Tests with Mock Server
+
+This repo shows how you can run your android tests with both **mocking** and **forwarding** HTTP requests by proxing your android emulator and using **Mock-Server**.
 
 ## If you are on a Linux system
 
@@ -14,6 +16,10 @@
 
 ## If you are on a Mac OS X
 
+> Mock and forward HTTP Request with Mock-Server on Android device
+
+![](demo-video-android-mock-server.mov)
+
 ### Prerequisites:
 
 * Docker
@@ -24,10 +30,10 @@
 
 1) Launch emulator device from command line:
     
-    `emulator -writable-system -netdelay none -netspeed full @<EMULATOR_NAME>` --> replace <EMULATOR_NAME> with the emulator you want to use (run `emulator -list-avds` to list all device names)
+    `emulator -writable-system -netdelay none -netspeed full @<EMULATOR_NAME>` --> replace `<EMULATOR_NAME>` with the emulator you want to use (run `emulator -list-avds` to list all device names)
 2) Run following command to configure the whole setup
     
-    `bash config/setup.sh`
+    `bash android/setup.sh`
     
 3) Launch mock-server container with following command:
     
