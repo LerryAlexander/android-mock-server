@@ -5,6 +5,7 @@ services:
     ports:
       - "1080:1080"
     environment:
+      - MOCKSERVER_PROPERTY_FILE=/config/mockserver.properties
       - MOCKSERVER_INITIALIZATION_JSON_PATH=/config/initializer.json
     volumes:
       - ./mock-server/:/config
@@ -12,14 +13,25 @@ services:
     image: budtmo/docker-android-x86-7.0
     container_name: android_container
     privileged: true
+    depends_on:
+      - "mock-server"
     ports:
       - "6080:6080"
       - "5554:5554"
       - "5555:5555"
+      - "8585:8585"
     environment:
       - DEVICE=Nexus 4
-      - APPIUM=false
+      - APPIUM=true
       - ENABLE_PROXY_ON_EMULATOR=true
       - HTTP_PROXY=http://172.17.0.1:1080
+      - NO_PROXY=localhost,127.0.0.1
+      - no_proxy=localhost,127.0.0.1
+      - MOCK_SERVER_CERTIFICATE=/certificate/CertificateAuthorityCertificate.pem
     volumes:
       - ./android:/config
+      - ./mock-server/certificate:/certificate
+      - ./mock-server/merge-expectations.sh:/mock-server/merge-expectations.sh
+      - ./mock-server/mocks:/mock-server/mocks
+      - ./android/utils.sh:/root/src/utils.sh
+      - ./android/supervisord.conf:/root/supervisord.conf
