@@ -48,7 +48,8 @@ This repo shows how you can set up an stack to run your android tests with both 
 
 2) Launch emulator device from command line:
     
-    `emulator -writable-system -netdelay none -netspeed full @<EMULATOR_NAME>` --> replace `<EMULATOR_NAME>` with the emulator you want to use (run `emulator -list-avds` to list all device names)
+        emulator -writable-system -netdelay none -netspeed full @<EMULATOR_NAME> 
+      *Note*: replace `<EMULATOR_NAME>` with the emulator you want to use (run `emulator -list-avds` to list all device names)
 
 3) Add all your mocked HTTP request and responses insdide folder `mock-server/mocks`. Follow this [guide to create expectations](https://mock-server.com/mock_server/creating_expectations.html) with Mock-Server.
 
