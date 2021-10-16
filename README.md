@@ -17,7 +17,7 @@ This repo shows how you can set up an stack to run your android tests with both 
 
 2) Add all your simulated responses ([expectations](https://mock-server.com/mock_server/creating_expectations.html)) inside folder `mock-server/mocks`. Then, you need to group them on the file `mock-server/initializer.json`, for this purpose just run following command:
 
-    `print 'Y\n' | sudo apt install jq; cat `find ./mock-server/mocks/* -name \*.json -type f \( ! -name initializer.json \)` | jq -s 'flatten' > ./mock-server/initializer.json`
+        print 'Y\n' | sudo apt install jq; cat `find ./mock-server/mocks/* -name \*.json -type f \( ! -name initializer.json \)` | jq -s 'flatten' > ./mock-server/initializer.json
 
 *Note:* you can find sample mocks inside folder `mock-server/mocks/examples`
 
