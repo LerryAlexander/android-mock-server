@@ -25,7 +25,7 @@ This repo shows how you can set up an stack to run your android tests with both 
 
 4) Start android + mock-server containers with following command:
     
-    `docker-compose up -d`
+        docker-compose up -d
 
 5) Interact with your android emulator device exposed at url http://localhost:6080
 
@@ -56,11 +56,11 @@ This repo shows how you can set up an stack to run your android tests with both 
 
 5) Run following command to configure the whole setup
     
-    `bash android/setup.sh`
+        bash android/setup.sh
     
 6) Launch mock-server container with following command:
     
-    `docker-compose up -d mock-server`
+        docker-compose up -d mock-server
 
 7) That's it, you are ready to go and test your android application with mocked HTTP responses. 
 
